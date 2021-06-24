@@ -32,7 +32,7 @@ class Sample01Activity : AppCompatActivity() {
         // INFO: パラメータにオブジェクトを含めることはできない(プリミティブ変数くらい)
         // 本格的にオブジェクトなどを渡したいときは、 Singleton クラスや ViewModel などを利用するほうがよい
         //
-        fun craeteIntent(context: Context, arg01: String, arg02: Int):Intent {
+        fun createIntent(context: Context, arg01: String, arg02: Int):Intent {
             return Intent(context, Sample01Activity::class.java).apply {
                 // activity 間でパラメータを渡すときは Extraにセットする
                 putExtra(Sample01Activity.INTENT_KEY_ARG01, arg01)

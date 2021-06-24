@@ -29,8 +29,12 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             Log.d(TAG, "click!")
 
-            val intent = Sample01Activity.craeteIntent(this, "a", 123)
+            val intent = Sample01Activity.createIntent(this, "a", 123)
             startActivity(intent)
+        }
+
+        binding.button2.setOnClickListener {
+            startActivity(LinerLayoutActivity.createIntent(this))
         }
     }
 }

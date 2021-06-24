@@ -17,6 +17,13 @@
             android:layout_height="wrap_content"
             android:text="@string/button_name_sample01"
             app:backgroundTint="#AAAAAA" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinerLayoutActivity"
+            app:backgroundTint="#AAAAAA" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

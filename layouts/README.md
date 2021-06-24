@@ -1,6 +1,9 @@
 # layouts
 
-- 紫のボタンを直したい: `app;backgroundTint` を設定(#AAAAAAで灰色に)
+- ボタンの紫を直したい: `app;backgroundTint` を設定(#AAAAAAで灰色に)
+- TextView
+  - テキストを中央にしたい: `android:gravity = center`
+  - TextView自体を親Viewの中央にしたい: `layout_gravity = center`
 
 ## binding を設定して、ボタンへのアクセスを簡単にする
 
@@ -46,3 +49,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
