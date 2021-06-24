@@ -1,5 +1,6 @@
 package com.example.layouts
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,12 @@ import com.example.layouts.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     // binding インスタンス
     private lateinit var binding: ActivityMainBinding
+
+    // クラスに直接所属するSingleton(主に固定の変数などをセット)
+    companion object {
+        // constにするとstatic引数からの取得になる(つけない場合はget関数)
+        private const val TAG = "MainActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         // クリックイベント
         binding.button.setOnClickListener {
-            Log.d("MainActivity", "click!")
+            Log.d(TAG, "click!")
+
+            val intent = Sample01Activity.craeteIntent(this, "a", 123)
+            startActivity(intent)
         }
     }
 }
