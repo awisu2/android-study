@@ -6,9 +6,11 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.children
+import androidx.core.widget.TextViewCompat
 import com.example.layouts.databinding.ActivityLinerLayoutBinding
 import org.w3c.dom.Text
 
@@ -48,10 +50,8 @@ class LinerLayoutActivity : AppCompatActivity() {
 
             text.isClickable = true
             text.setOnClickListener{
-//                    TODO: what is this
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    text.setTextAppearance(R.style.style03)
-                }
+                // クリック時にスタイルを適用(テキスト関係だけが反映される)
+                TextViewCompat.setTextAppearance(text, R.style.myActiveButton)
             }
         }
     }
