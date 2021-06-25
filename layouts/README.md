@@ -1,6 +1,9 @@
 # layouts
 
-- ボタンの紫を直したい: `app;backgroundTint` を設定(#AAAAAA で灰色に)
+- ボタンのあれを直したい
+  - 紫を直したい: `android:backgroundTint` を設定(#AAAAAA で灰色に)
+    - このとき`android:background` は設定してはだめ
+  - 全部大文字になる: `android:textAllCaps` を false で指定
 - TextView
   - テキストを中央にしたい: `android:gravity = center`
   - TextView 自体を親 View の中央にしたい: `layout_gravity = center`
