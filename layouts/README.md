@@ -153,3 +153,13 @@ f: layout.xml
       - layout_constraintHorizontal_weight, layout_constraintVertical_weight
   - 必ずしも垂直、水平の両方を設定する必要はなく、「水平のチェーンを設定して、垂直方向はずれている」みたいな設定も可能
 - アニメーション: ConstraintSets を利用するとのこと
+
+## プログラム上で、TextView に style を割り当てる
+
+[How to Dynamically Change an Android View’s Style | by Elye | Mobile App Development Publication | Medium](https://medium.com/mobile-app-development-publication/dynamically-change-android-views-style-56b18e59b33b)
+
+- `TextView(this, null, 0, R.style.myText)` と、第４引数に割り当てることで設定が可能
+  - ただ、第２，３引数に空の値をセットしてしまっている
+- SDK API 21 ~ であれば、`TextView(ContextThemeWrapper(this, R.style.myText))` という記述も可能
+- テキスト関連だけが対象だが、生成されたインスタンスに上書きもできる
+  - `TextViewCompat.setTextAppearance(text, R.style.myText)`

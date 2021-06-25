@@ -1,18 +1,21 @@
 package com.example.layouts
 
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.core.view.children
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.OrientationHelper
 import com.example.layouts.databinding.ActivityGridBinding
 
@@ -50,10 +53,13 @@ class GridActivity : AppCompatActivity() {
 
         // add
         binding.gridAddButton.setOnClickListener{
-            val text = TextView(this).apply {
+            // constructorであればstyleのセットが可能
+            val text = TextView(ContextThemeWrapper(this, R.style.myText)).apply {
                 id = View.generateViewId()
                 text = "add Text ${addCount}"
+                background = getDrawable(R.drawable.round_square)
             }
+
             addCount += 1
 
             // constraintLayoutに追加し、flowにも追加(layout画面での Referenced Viewに追加される)
