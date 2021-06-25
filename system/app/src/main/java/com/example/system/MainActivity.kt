@@ -22,10 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.button.setOnClickListener {
-            Log.d(TAG, "click!")
+            startActivity(BuildActivity.createIntent(this))
+        }
 
-            val intent = BuildActivity.createIntent(this)
-            startActivity(intent)
+        binding.gotoLifecycleButton.setOnClickListener {
+            startActivity(ActivityLifeCycleActivity.createIntent(this))
         }
     }
 }
