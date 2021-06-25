@@ -12,6 +12,26 @@
   - 型チェック: `view is TextView`
   - 変換できない場合は null にする: `val text = view as? TextView`
   - `is` して `as` (`as?` でなく)　するのが良さそう(後で使うのだから)
+- android の 2 大 layout: ConstraintLayout, FlexBoxLayout
+  - ConstraintLayout: 親及び同階層の View に対し相対的な位置を指定することが可能な Layout
+    - default では Activity のベースとして利用されている
+    - 子要素は垂直、水平の制約をかならず指定する必要がある
+    - 詳細は後述
+  - FlexBoxLayout: まだ良くわかっていないが, 座標指定不可で内部の view は重なる
+    - Fragment のデフォルトルート view に利用されている
+    - 単体パーツ用？
+- grid 表示の実装は、ConstraintLayout を利用する
+  - Android では GridLayout, GridView は Legacy になっている
+  - [ConstraintLayout でレスポンシブ UI を作成する  |  Android デベロッパー](https://developer.android.com/training/constraint-layout?hl=ja)
+- サイズ単位について
+  - dp どの(解像度が違う)端末でも同じ大きさに見えるように調整される単位。基本これが利用される
+  - px (pixel): dp と違い、端末ごとの 1px に相当
+- サイズを考慮した変換関数
+  - dp と px 間の倍率: `Resources.getSystem().displayMetrics.density`
+    - Activity 内であれば、 `resources.displayMetrics.density` で OK
+  - dp から px に変換する関数を Int に追加
+    - `val Int.dpToPx: Int get() = (this * Resources.getSystem().displayMetrics.density).toInt()`
+    - サブパッケージからでも import して利用できるので、Util.kt にでも書いておくと便利
 
 ## binding を設定して、ボタンへのアクセスを簡単にする
 
@@ -99,3 +119,24 @@ f: layout.xml
             android:clickable="true"
             android:text="TextView" />
 ```
+
+## ConstraintLayout で可能なこと
+
+[ConstraintLayout でレスポンシブ UI を作成する  |  Android デベロッパー](https://developer.android.com/training/constraint-layout?hl=ja)
+
+- ガイドラインを設定して制約の一つにする
+  - 砂時計みたいなアイコンをクリックして Add Horizontal Guideline or Add Vertical Guideline
+- バリア：View に関連付けられたガイドライン
+  - 砂時計みたいなアイコンをクリックして Add Horizontal Barrier or Add Vertical Barrier
+- 制約のサイズ指定時のアイコンの見た目について
+  - I : 固定
+  - ">>>" : コンテンツ(内部要素)を収めるのに必要なだけ拡大(wrap content 的な?)
+  - ギザギザ: 制約に合致する範囲で可能な限り拡大
+- チェーン: View 同士を相互に連携させた線形グループ(縦/横のグルーピング)
+  - 相互のサイズを考慮した設定が可能
+    - Spread: 均等な margin で配置
+    - Spread inside: 外枠(layout と)設置する部分の margin は 0 または固定で均等配置
+    - Weighted: 隙間がないように拡大しつつ均等配置 (weight の指定が可能)
+      - layout_constraintHorizontal_weight, layout_constraintVertical_weight
+  - 必ずしも垂直、水平の両方を設定する必要はなく、「水平のチェーンを設定して、垂直方向はずれている」みたいな設定も可能
+- アニメーション: ConstraintSets を利用するとのこと

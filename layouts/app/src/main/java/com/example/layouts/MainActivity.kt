@@ -36,5 +36,9 @@ class MainActivity : AppCompatActivity() {
         binding.button2.setOnClickListener {
             startActivity(LinerLayoutActivity.createIntent(this))
         }
+
+        binding.button3.setOnClickListener {
+            startActivity(GridActivity.createIntent(this))
+        }
     }
 }
