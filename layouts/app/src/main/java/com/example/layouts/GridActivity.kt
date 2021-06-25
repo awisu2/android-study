@@ -90,15 +90,9 @@ class GridActivity : AppCompatActivity() {
         Log.d(TAG, "--- ${count}")
         if (count <= 1) return null
 
-        Log.d(TAG, "--- 1")
-        var view = binding.gridLayout.getChildAt(count - 1)
-        if (view !is Flow) {
-            return view
-        }
-
-        Log.d(TAG, "--- 2")
-        view = binding.gridLayout.getChildAt(count - 2)
-        return if (view is Flow) null else view
+        return binding.gridLayout.children.filter {
+            child -> child !is Flow
+        }.last()
     }
 }
 
