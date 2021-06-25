@@ -40,5 +40,9 @@ class MainActivity : AppCompatActivity() {
         binding.button3.setOnClickListener {
             startActivity(GridActivity.createIntent(this))
         }
+
+        binding.button4.setOnClickListener {
+            startActivity(CustomSharpesActivity.createIntent(this))
+        }
     }
 }

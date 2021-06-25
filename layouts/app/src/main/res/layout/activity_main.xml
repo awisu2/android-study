@@ -28,7 +28,14 @@
         <Button
             android:id="@+id/button3"
             style="@style/myButton"
-            android:text="Grid" />
+            android:text="Grid"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/myButton"
+            android:layout_margin="5dp"
+            android:text="CustomSharpe" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

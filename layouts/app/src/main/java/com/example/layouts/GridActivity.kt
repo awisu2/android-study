@@ -1,18 +1,21 @@
 package com.example.layouts
 
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.core.view.children
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.OrientationHelper
 import com.example.layouts.databinding.ActivityGridBinding
 
@@ -50,10 +53,13 @@ class GridActivity : AppCompatActivity() {
 
         // add
         binding.gridAddButton.setOnClickListener{
-            val text = TextView(this).apply {
+            // constructorであればstyleのセットが可能
+            val text = TextView(ContextThemeWrapper(this, R.style.myText)).apply {
                 id = View.generateViewId()
                 text = "add Text ${addCount}"
+                background = getDrawable(R.drawable.round_square)
             }
+
             addCount += 1
 
             // constraintLayoutに追加し、flowにも追加(layout画面での Referenced Viewに追加される)
@@ -70,6 +76,7 @@ class GridActivity : AppCompatActivity() {
             binding.gridLayout.removeView(view)
         }
 
+        // wrapmodeの変更
         binding.gridFlowNoneButton.setOnClickListener {
             binding.gridLayoutFlow.setWrapMode(Flow.WRAP_NONE)
         }
@@ -81,7 +88,6 @@ class GridActivity : AppCompatActivity() {
         binding.gridFlowChainButton.setOnClickListener {
             binding.gridLayoutFlow.setWrapMode(Flow.WRAP_CHAIN)
         }
-
     }
 
     // 最後のviewを取得(Flow以外)
@@ -90,15 +96,9 @@ class GridActivity : AppCompatActivity() {
         Log.d(TAG, "--- ${count}")
         if (count <= 1) return null
 
-        Log.d(TAG, "--- 1")
-        var view = binding.gridLayout.getChildAt(count - 1)
-        if (view !is Flow) {
-            return view
-        }
-
-        Log.d(TAG, "--- 2")
-        view = binding.gridLayout.getChildAt(count - 2)
-        return if (view is Flow) null else view
+        return binding.gridLayout.children.filter {
+            child -> child !is Flow
+        }.last()
     }
 }
 
