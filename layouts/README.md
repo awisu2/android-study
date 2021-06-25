@@ -1,9 +1,19 @@
 # layouts
 
 - ボタンのあれを直したい
-  - 紫を直したい: `android:backgroundTint` を設定(#AAAAAA で灰色に)
+  - 紫ががが: `android:backgroundTint` を設定(#AAAAAA で灰色に)
     - このとき`android:background` は設定してはだめ
+    - これについて掘り下げる:
   - 全部大文字になる: `android:textAllCaps` を false で指定
+- もっとしっかり紫をなくしたい
+  - 原因は、"res/values/themes/themes.xml" で style の parent に "Theme.MaterialComponents.DayNight.DarkActionBar" が割当てられているのが原因
+    - このテーマは、background など特定の色を強制設定しており、そのため変更ができない
+  - `Theme.AppCompat.DayNight.DarkActionBar` に変更することで、background が無事機能するようになる
+    - note: **ただし、この影響がどのくらいの範囲に渡っているのかは不明なので注意**
+  - じゃあ `backgroundTint` って何さ？: 「background に割り当てた画像リソースにカラーフィルタをかけて色を変化させる属性」とのこと
+    - [Android のボタンスタイルを理解する - Qiita](https://qiita.com/ushi3_jp/items/5a77afe89ab876046eb1)
+    - そのため **α のある色をセットすると紫が交じる** 色変更できてるっぽいのは α が無いまたはベタ塗りでの設定のため
+      - 実際、drawable での sharpe で色指定をして backgroundTint にセットすると合成した色になる
 - TextView
   - テキストを中央にしたい: `android:gravity = center`
   - TextView 自体を親 View の中央にしたい: `layout_gravity = center`

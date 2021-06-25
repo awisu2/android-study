@@ -70,6 +70,7 @@ class GridActivity : AppCompatActivity() {
             binding.gridLayout.removeView(view)
         }
 
+        // wrapmodeの変更
         binding.gridFlowNoneButton.setOnClickListener {
             binding.gridLayoutFlow.setWrapMode(Flow.WRAP_NONE)
         }
@@ -81,7 +82,6 @@ class GridActivity : AppCompatActivity() {
         binding.gridFlowChainButton.setOnClickListener {
             binding.gridLayoutFlow.setWrapMode(Flow.WRAP_CHAIN)
         }
-
     }
 
     // 最後のviewを取得(Flow以外)
