@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="myButton">
+    <style name="myText">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:background">@color/green</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingRight">8dp</item>
         <item name="android:paddingLeft">8dp</item>
     </style>
-    <style name="myActiveButton" parent="myButton">
+    <style name="myActiveText" parent="myText">
         <item name="android:textStyle">bold</item>
         <item name="android:background">@color/orange</item>
+    </style>
+    <style name="myButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>

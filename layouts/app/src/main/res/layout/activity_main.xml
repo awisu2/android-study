@@ -24,6 +24,11 @@
             android:layout_height="wrap_content"
             android:text="LinerLayoutActivity"
             app:backgroundTint="#AAAAAA" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/myButton"
+            android:text="Grid" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

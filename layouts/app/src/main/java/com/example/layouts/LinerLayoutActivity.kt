@@ -51,7 +51,7 @@ class LinerLayoutActivity : AppCompatActivity() {
             text.isClickable = true
             text.setOnClickListener{
                 // クリック時にスタイルを適用(テキスト関係だけが反映される)
-                TextViewCompat.setTextAppearance(text, R.style.myActiveButton)
+                TextViewCompat.setTextAppearance(text, R.style.myActiveText)
             }
         }
     }

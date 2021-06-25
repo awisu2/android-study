@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GridActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/grid_add_button"
+                style="@style/myButton"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/grid_delete_button"
+                style="@style/myButton"
+                android:layout_marginStart="8dp"
+                android:text="Delete"
+                app:layout_constraintStart_toEndOf="@+id/grid_add_button"
+                app:layout_constraintTop_toTopOf="@+id/grid_add_button" />
+
+            <Button
+                android:id="@+id/grid_toggle_gap_button"
+                style="@style/myButton"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="ToggleGap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/grid_add_button" />
+
+            <Button
+                android:id="@+id/grid_flow_none_button"
+                style="@style/myButton"
+                android:layout_marginStart="8dp"
+                android:text="None"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/grid_toggle_gap_button" />
+
+            <Button
+                android:id="@+id/grid_flow_aligned_button"
+                style="@style/myButton"
+                android:layout_marginStart="4dp"
+                android:text="Aligned"
+                app:layout_constraintStart_toEndOf="@+id/grid_flow_none_button"
+                app:layout_constraintTop_toTopOf="@+id/grid_flow_none_button" />
+
+            <Button
+                android:id="@+id/grid_flow_chain_button"
+                style="@style/myButton"
+                android:layout_marginStart="8dp"
+                android:text="chain"
+                app:layout_constraintStart_toEndOf="@+id/grid_flow_aligned_button"
+                app:layout_constraintTop_toTopOf="@+id/grid_flow_aligned_button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/grid_layout_flow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:constraint_referenced_ids="grid_item1,grid_item3,grid_item2,grid_item4,grid_item5,grid_item6,grid_item7,grid_item8,grid_item9,grid_item10"
+                app:flow_horizontalGap="10dp"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/grid_item1"
+                style="@style/myText"
+                android:text="TextView 1" />
+
+            <TextView
+                android:id="@+id/grid_item2"
+                style="@style/myText"
+                android:text="TextView 2" />
+
+            <TextView
+                android:id="@+id/grid_item3"
+                style="@style/myText"
+                android:text="TextView 3" />
+
+            <TextView
+                android:id="@+id/grid_item4"
+                style="@style/myText"
+                android:text="TextView 4" />
+
+            <TextView
+                android:id="@+id/grid_item5"
+                style="@style/myText"
+                android:text="TextView 5" />
+
+            <TextView
+                android:id="@+id/grid_item6"
+                style="@style/myText"
+                android:text="TextView 6" />
+
+            <TextView
+                android:id="@+id/grid_item7"
+                style="@style/myText"
+                android:text="TextView 7" />
+
+            <TextView
+                android:id="@+id/grid_item8"
+                style="@style/myText"
+                android:text="TextView 8" />
+
+            <TextView
+                android:id="@+id/grid_item9"
+                style="@style/myText"
+                android:text="TextView 9" />
+
+            <TextView
+                android:id="@+id/grid_item10"
+                style="@style/myText"
+                android:text="TextView 10" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
