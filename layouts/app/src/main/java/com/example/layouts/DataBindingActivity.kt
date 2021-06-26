@@ -68,6 +68,6 @@ class DataBindingActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.message = "foo ---- bar ------"
-        binding.sampleData = SampleData(100, "hogehoge")
+        binding.sampleData = SampleData(100)
     }
 }

@@ -1,10 +1,21 @@
 package com.example.layouts
 
+import androidx.databinding.ObservableField
+import androidx.lifecycle.LiveData
 
-data class SampleData(
+
+class SampleData(
     var num: Int = 0,
-    var text: String = "",
+) {
+    var text = ObservableField<String>("a")
+    var text2 = "a"
 
-    val message_overzero: String = "over 0",
-    val message_underzero: String = "under 0"
-)
+    fun changeText() {
+        text.set(if (text.get() != "a") "a" else "b")
+    }
+
+    fun changeText2() {
+        text2 = if (text2 != "a") "a" else "b"
+    }
+
+}

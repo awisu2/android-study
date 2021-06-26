@@ -20,13 +20,34 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView7"
                 style="@style/myText"
                 android:text="@{message}" />
 
             <TextView
                 style="@style/myText"
-                android:text="@{sampleData.num > 0 ? sampleData.message_overzero : sampleData.message_underzero}"
+                android:text="@{String.valueOf(sampleData.num)}"
+                android:clickable="true"
+                />
+
+            <Button
+                style="@style/myButton"
+                android:text="change Observable Text"
+                android:onClick="@{(view) -> sampleData.changeText()}"/>
+
+            <TextView
+                style="@style/myText"
+                android:text="@{sampleData.text}"
+                android:clickable="true"
+                />
+
+            <Button
+                style="@style/myButton"
+                android:text="change Text"
+                android:onClick="@{() -> sampleData.changeText2()}"/>
+
+            <TextView
+                style="@style/myText"
+                android:text="@{sampleData.text2}"
                 android:clickable="true"
                 />
         </LinearLayout>
