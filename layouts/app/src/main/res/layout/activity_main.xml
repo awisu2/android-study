@@ -42,6 +42,12 @@
             style="@style/myButton"
             android:layout_margin="5dp"
             android:text="Goto WithLiveData" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/myButton"
+            android:layout_margin="5dp"
+            android:text="Goto DataBinding" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

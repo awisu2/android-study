@@ -50,5 +50,9 @@ class MainActivity : AppCompatActivity() {
         binding.button5.setOnClickListener {
             startActivity(WithLiveData.createIntent(this))
         }
+
+        binding.button6.setOnClickListener {
+            startActivity(DataBindingActivity.createIntent(this))
+        }
     }
 }
