@@ -26,9 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         // クリックイベント
+        // setOnClickListenerを二重登録すると上書きされる
         binding.button.setOnClickListener {
-            Log.d(TAG, "click!")
-
+            Log.w(TAG, "not call! when i over write")
+        }
+        binding.button.setOnClickListener {
             val intent = Sample01Activity.createIntent(this, "a", 123)
             startActivity(intent)
         }
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.button4.setOnClickListener {
             startActivity(CustomSharpesActivity.createIntent(this))
+        }
+
+        binding.button5.setOnClickListener {
+            startActivity(WithLiveData.createIntent(this))
         }
     }
 }

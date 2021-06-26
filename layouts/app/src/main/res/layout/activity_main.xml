@@ -36,6 +36,12 @@
             style="@style/myButton"
             android:layout_margin="5dp"
             android:text="CustomSharpe" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/myButton"
+            android:layout_margin="5dp"
+            android:text="Goto WithLiveData" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

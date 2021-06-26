@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Layouts">
-        <activity android:name=".CustomSharpesActivity"></activity>
+        <activity android:name=".WithLiveData"></activity>
+        <activity android:name=".CustomSharpesActivity" />
         <activity android:name=".GridActivity" />
         <activity android:name=".LinerLayoutActivity" />
         <activity android:name=".Sample01Activity" />
