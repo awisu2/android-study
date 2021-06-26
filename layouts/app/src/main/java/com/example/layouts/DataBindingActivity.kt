@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.viewModels
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import com.example.layouts.databinding.ActivityDataBindingBinding
 import com.example.layouts.databinding.ActivityWithLiveDataBinding

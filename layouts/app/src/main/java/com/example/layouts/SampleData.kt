@@ -1,8 +1,6 @@
 package com.example.layouts
 
 import androidx.databinding.ObservableField
-import androidx.lifecycle.LiveData
-
 
 class SampleData(
     var num: Int = 0,
@@ -17,5 +15,4 @@ class SampleData(
     fun changeText2() {
         text2 = if (text2 != "a") "a" else "b"
     }
-
 }

@@ -26,7 +26,6 @@
             <TextView
                 style="@style/myText"
                 android:text="@{String.valueOf(sampleData.num)}"
-                android:clickable="true"
                 />
 
             <Button
@@ -37,7 +36,6 @@
             <TextView
                 style="@style/myText"
                 android:text="@{sampleData.text}"
-                android:clickable="true"
                 />
 
             <Button
@@ -48,8 +46,22 @@
             <TextView
                 style="@style/myText"
                 android:text="@{sampleData.text2}"
-                android:clickable="true"
                 />
+
+
+            <TextView
+                style="@style/myText"
+                android:text="Binding Adapter" />
+
+            <TextView
+                style="@style/myText"
+                app:helloText="@{sampleData.text}"
+                />
+
+            <TextView
+                android:id="@+id/sText"
+                style="@style/myText"
+                app:helloText="@{sampleData.text}" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
