@@ -16,6 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#777777"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -25,28 +26,25 @@
 
             <TextView
                 style="@style/myText"
-                android:text="@{String.valueOf(sampleData.num)}"
-                />
+                android:text="@{String.valueOf(sampleData.num)}" />
 
             <Button
                 style="@style/myButton"
-                android:text="change Observable Text"
-                android:onClick="@{(view) -> sampleData.changeText()}"/>
+                android:onClick="@{(view) -> sampleData.changeText()}"
+                android:text="change Observable Text" />
 
             <TextView
                 style="@style/myText"
-                android:text="@{sampleData.text}"
-                />
+                android:text="@{sampleData.text}" />
 
             <Button
                 style="@style/myButton"
-                android:text="change Text"
-                android:onClick="@{() -> sampleData.changeText2()}"/>
+                android:onClick="@{() -> sampleData.changeText2()}"
+                android:text="change Text" />
 
             <TextView
                 style="@style/myText"
-                android:text="@{sampleData.text2}"
-                />
+                android:text="@{sampleData.text2}" />
 
 
             <TextView
@@ -55,13 +53,13 @@
 
             <TextView
                 style="@style/myText"
-                app:helloText="@{sampleData.text}"
-                />
+                app:helloText="@{sampleData.text}" />
 
             <TextView
                 android:id="@+id/sText"
                 style="@style/myText"
                 app:helloText="@{sampleData.text}" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

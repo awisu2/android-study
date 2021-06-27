@@ -48,6 +48,12 @@
             style="@style/myButton"
             android:layout_margin="5dp"
             android:text="Goto DataBinding" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/myButton"
+            android:layout_margin="5dp"
+            android:text="Goto DataBinding with ViewModel LiveData" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
