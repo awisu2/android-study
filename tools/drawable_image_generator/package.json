@@ -1,0 +1,10 @@
+{
+  "name": "drawable_image_generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "sharp": "^0.28.3"
+  }
+}
