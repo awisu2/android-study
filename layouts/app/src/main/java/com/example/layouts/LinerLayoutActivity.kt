@@ -2,17 +2,13 @@ package com.example.layouts
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.children
 import androidx.core.widget.TextViewCompat
 import com.example.layouts.databinding.ActivityLinerLayoutBinding
-import org.w3c.dom.Text
 
 // INFO:
 // LinerLayoutサンプル
@@ -21,6 +17,7 @@ import org.w3c.dom.Text
 //
 // 残念ながら一括指定する方法はない
 // 擬似的であれば、カスタムスタイルに以下の方法でセットすることにより統一可能
+// または、ConstraintLayout + Flow + Gap を利用することで設定可能。 (GridActivityにサンプル)
 //
 // 隙間を開ける方法
 // 1. viewにlayout_marginをセットする

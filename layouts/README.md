@@ -1,5 +1,7 @@
 # layouts
 
+[レイアウト  \|  Android デベロッパー  \|  Android Developers](https://developer.android.com/guide/topics/ui/declaring-layout?hl=ja)
+
 - ボタンのあれを直したい
   - 紫ががが: `android:backgroundTint` を設定(#AAAAAA で灰色に)
     - このとき`android:background` は設定してはだめ
