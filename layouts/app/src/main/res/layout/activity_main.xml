@@ -57,6 +57,13 @@
             android:id="@+id/button7"
             style="@style/myButton"
             android:text="Goto DataBinding with ViewModel LiveData" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/myButton"
+            android:text="Goto Fragment" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,5 +58,9 @@ class MainActivity : AppCompatActivity() {
         binding.button7.setOnClickListener {
             startActivity(DataBindingWithViewModelLiveDataActivity.createIntent(this))
         }
+
+        binding.button8.setOnClickListener {
+            startActivity(FragmentActivity.createIntent(this))
+        }
     }
 }
