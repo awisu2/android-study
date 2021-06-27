@@ -57,4 +57,5 @@ class FragmentActivity : AppCompatActivity() {
 
         // fragmentの生成と追加
         transaction.commit()
+    }
 }
