@@ -16,7 +16,7 @@ import com.example.layouts.databinding.ActivityDataBindingWithViewModelLiveDataB
 // - databingindにより
 //   - idをベースとしたlayoutへの反映処理をロジックに載せずにすむ
 //   - `android:text="@{viewModel.text}"` といった変数的な記載が可能になる
-// - 双方向バインディングを設定することで
+// - 双方向バインディングを設定することで(値の変更をlayoutへ、layoutでの変更を値へ)
 //   - LiveData の observeを記載せずにすむ
 //
 // 双方向バインディングの実装の実装
