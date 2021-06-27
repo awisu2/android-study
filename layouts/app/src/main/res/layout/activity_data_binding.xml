@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="message" type="String"/>
+        <variable name="sampleData" type="com.example.layouts.SampleData"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DataBindingActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#777777"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/myText"
+                android:text="@{message}" />
+
+            <TextView
+                style="@style/myText"
+                android:text="@{String.valueOf(sampleData.num)}" />
+
+            <Button
+                style="@style/myButton"
+                android:onClick="@{(view) -> sampleData.changeText()}"
+                android:text="change Observable Text" />
+
+            <TextView
+                style="@style/myText"
+                android:text="@{sampleData.text}" />
+
+            <Button
+                style="@style/myButton"
+                android:onClick="@{() -> sampleData.changeText2()}"
+                android:text="change Text" />
+
+            <TextView
+                style="@style/myText"
+                android:text="@{sampleData.text2}" />
+
+
+            <TextView
+                style="@style/myText"
+                android:text="Binding Adapter" />
+
+            <TextView
+                style="@style/myText"
+                app:helloText="@{sampleData.text}" />
+
+            <TextView
+                android:id="@+id/sText"
+                style="@style/myText"
+                app:helloText="@{sampleData.text}" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
