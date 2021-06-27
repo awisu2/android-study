@@ -14,6 +14,19 @@ import androidx.core.widget.TextViewCompat
 import com.example.layouts.databinding.ActivityLinerLayoutBinding
 import org.w3c.dom.Text
 
+// INFO:
+// LinerLayoutサンプル
+//
+// ## LinerLayout内の子viewに等間隔の隙間を空けたい
+//
+// 残念ながら一括指定する方法はない
+// 擬似的であれば、カスタムスタイルに以下の方法でセットすることにより統一可能
+//
+// 隙間を開ける方法
+// 1. viewにlayout_marginをセットする
+// 2. viewにlayout_paddingをセットする
+// 3. spaceタグを追加する
+//
 class LinerLayoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLinerLayoutBinding
 
