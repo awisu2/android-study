@@ -28,31 +28,34 @@
         <Button
             android:id="@+id/button3"
             style="@style/myButton"
-            android:text="Grid"
-            android:layout_margin="5dp" />
+            android:text="Grid" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
         <Button
             android:id="@+id/button4"
             style="@style/myButton"
-            android:layout_margin="5dp"
             android:text="CustomSharpe" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
         <Button
             android:id="@+id/button5"
             style="@style/myButton"
-            android:layout_margin="5dp"
             android:text="Goto WithLiveData" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
         <Button
             android:id="@+id/button6"
             style="@style/myButton"
-            android:layout_margin="5dp"
             android:text="Goto DataBinding" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
         <Button
             android:id="@+id/button7"
             style="@style/myButton"
-            android:layout_margin="5dp"
             android:text="Goto DataBinding with ViewModel LiveData" />
     </LinearLayout>
 
