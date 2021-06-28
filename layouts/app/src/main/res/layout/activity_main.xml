@@ -1,76 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="activity" type="com.example.layouts.MainActivity"/>
+    </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_name_sample01"
-            app:backgroundTint="#AAAAAA" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LinerLayoutActivity"
-            app:backgroundTint="#AAAAAA" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_name_sample01"
+                app:backgroundTint="#AAAAAA" />
 
-        <Button
-            android:id="@+id/button3"
-            style="@style/myButton"
-            android:text="Grid" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LinerLayoutActivity"
+                app:backgroundTint="#AAAAAA" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button3"
+                style="@style/myButton"
+                android:text="Grid" />
 
-        <Button
-            android:id="@+id/button4"
-            style="@style/myButton"
-            android:text="CustomSharpe" />
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button4"
+                style="@style/myButton"
+                android:text="CustomSharpe" />
 
-        <Button
-            android:id="@+id/button5"
-            style="@style/myButton"
-            android:text="Goto WithLiveData" />
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button5"
+                style="@style/myButton"
+                android:text="Goto WithLiveData" />
 
-        <Button
-            android:id="@+id/button6"
-            style="@style/myButton"
-            android:text="Goto DataBinding" />
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button6"
+                style="@style/myButton"
+                android:text="Goto DataBinding" />
 
-        <Button
-            android:id="@+id/button7"
-            style="@style/myButton"
-            android:text="Goto DataBinding with ViewModel LiveData" />
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button7"
+                style="@style/myButton"
+                android:text="Goto DataBinding with ViewModel LiveData" />
 
-        <Button
-            android:id="@+id/button8"
-            style="@style/myButton"
-            android:text="Goto Fragment" />
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+            <Button
+                android:id="@+id/button8"
+                style="@style/myButton"
+                android:text="Goto Fragment" />
 
-        <Button
-            android:id="@+id/button9"
-            style="@style/myButton"
-            android:text="Goto LayoutInflate" />
-    </LinearLayout>
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/button9"
+                style="@style/myButton"
+                android:text="Goto LayoutInflate" />
+
+            <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+
+            <Button
+                style="@style/myButton"
+                android:onClick="@{() -> activity.gotoCallSystemMenu()}"
+                android:text="Goto call systemMenu" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
