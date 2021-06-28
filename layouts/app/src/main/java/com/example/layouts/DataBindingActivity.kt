@@ -47,6 +47,10 @@ import com.example.layouts.databinding.ActivityWithLiveDataBinding
 class DataBindingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDataBindingBinding
 
+    // bindingを何らかの理由でnullにしたい場合
+//    private var _binding: ActivityDataBindingBinding? = null
+//    private val binding get() = _binding!!
+
     // viewModelのインスタンス
     private val viewModel: WithLiveDataViewModel by viewModels()
 

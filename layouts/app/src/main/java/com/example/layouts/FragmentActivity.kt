@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
 import com.example.layouts.databinding.ActivityFragmentBinding
 import com.example.layouts.databinding.ActivityGridBinding
 
@@ -22,7 +23,7 @@ import com.example.layouts.databinding.ActivityGridBinding
 //  android:id="@+id/fragment_fragment"
 //  android:name="com.example.layouts.FragmentFragment" />
 //
-class FragmentActivity : AppCompatActivity() {
+class FragmentActivity: AppCompatActivity() {
     private lateinit var binding: ActivityFragmentBinding
 
     companion object {
@@ -40,7 +41,9 @@ class FragmentActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        addFragment()
+        if (savedInstanceState == null) {
+            addFragment()
+        }
     }
 
     // codeでの fragment 追加
@@ -49,7 +52,7 @@ class FragmentActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
 
         // fragmentの生成と追加
-        val fragment = FragmentFragment("add on code")
+        val fragment = FragmentFragment(FragmentData("FragmentActivity Create"))
         transaction.add(binding.fragmentLiner.id, fragment)
 
         // 既存のfragmentを入れ替えたい場合はreplase
@@ -59,3 +62,4 @@ class FragmentActivity : AppCompatActivity() {
         transaction.commit()
     }
 }
+
