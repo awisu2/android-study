@@ -40,7 +40,7 @@
             <Button
                 style="@style/myButton"
                 android:onClick="@{() -> sampleData.changeText2()}"
-                android:text="change Text" />
+                android:text="change just String Text (layout not change dynamic)" />
 
             <TextView
                 style="@style/myText"
@@ -49,7 +49,7 @@
 
             <TextView
                 style="@style/myText"
-                android:text="Binding Adapter" />
+                android:text="-- Binding Adapter --" />
 
             <TextView
                 style="@style/myText"

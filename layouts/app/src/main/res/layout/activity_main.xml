@@ -64,6 +64,13 @@
             android:id="@+id/button8"
             style="@style/myButton"
             android:text="Goto Fragment" />
+
+        <Space android:layout_width="0dp" android:layout_height="@dimen/space_height" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/myButton"
+            android:text="Goto LayoutInflate" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

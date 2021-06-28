@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         // クリックイベント
         // setOnClickListenerを二重登録すると上書きされる
+        //
         binding.button.setOnClickListener {
             Log.w(TAG, "not call! when i over write")
         }
@@ -61,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.button8.setOnClickListener {
             startActivity(FragmentActivity.createIntent(this))
+        }
+
+        binding.button9.setOnClickListener {
+            startActivity(LayoutInflateActivity.createIntent(this))
         }
     }
 }
