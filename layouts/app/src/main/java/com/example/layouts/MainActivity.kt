@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.activity = this
+
         // クリックイベント
         // setOnClickListenerを二重登録すると上書きされる
         //
@@ -67,5 +69,9 @@ class MainActivity : AppCompatActivity() {
         binding.button9.setOnClickListener {
             startActivity(LayoutInflateActivity.createIntent(this))
         }
+    }
+
+    fun gotoCallSystemMenu() {
+        startActivity(CallSystemMenuActivity.createIntent((this)))
     }
 }
