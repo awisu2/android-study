@@ -24,4 +24,10 @@
     <style name="myRoundButton" parent="myButton">
         <item name="android:background">@drawable/round_square</item>
     </style>
+    <style name="myCycle">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/oval_yellow</item>
+    </style>
+
 </resources>

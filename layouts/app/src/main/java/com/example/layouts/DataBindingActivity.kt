@@ -33,12 +33,14 @@ import com.example.layouts.databinding.ActivityWithLiveDataBinding
 //    - プロパティはxmlsの宣言だけ既存のrootから移動
 // 2. dataタグ内に連携したいdata郡を記述
 // 3. layout内でそれらの値を利用する
+//    - 利用可能な式言語: https://developer.android.com/topic/libraries/data-binding/expressions?hl=ja#expression_language
 //
 // layout.xmlでの挙動について
 //
 // - 色々可能ではあるが、以下はできない
-//   - Int型の宣言と、text表示
-//   　　- 実際には利用できるが計算に利用できるだけ、toString()すら実行できない
+//   - Int型の宣言(data/variable)
+//     - 宣言引数にIntは指定できない。Stringは可能。オブジェクトも宣言できるのでそれ経由で
+//     - toStringは効かないので、`@{String.valueOf(num)}`という具合で変換をしてセットする必要あり
 //   - 文字の直接表示。どこかで宣言しておきそれを利用 (android:text="hello @{name}"とかできない)
 //   - 文字の合成
 // - ざっくり：三項演算子とオブジェクトのメソッドコール以外のことは不可能
