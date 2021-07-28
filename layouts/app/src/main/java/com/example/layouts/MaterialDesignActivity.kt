@@ -12,8 +12,9 @@ import android.os.Bundle
 //
 //
 //
-//
-//
+// - themaは継承するような命名規則: Theme.MaterialComponents.DayNight.DarkActionBar
+//   - Theme.MaterialComponents に DyNight を加え、さらに DarkActionBar の設定を加えている
+// - Bridge theme: メインテーマを変更できないとき、個別のstyleにparentとして割り当てられるBridgeが用意されている
 //
 class MaterialDesignActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

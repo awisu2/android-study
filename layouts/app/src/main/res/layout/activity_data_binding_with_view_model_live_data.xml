@@ -16,6 +16,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/testtext"
                 style="@style/myText"
                 android:text="@={viewModel.text}"
                 android:ems="10"

@@ -10,6 +10,6 @@ class DataBindingWithViewModelLiveDataViewModel: ViewModel() {
 
     fun changeText() {
         Log.d("ViewModel", "changeText()")
-        this.text.value = if (this.text.value != "a") "a" else "b"
+        this.text.postValue(if (this.text.value != "a") "a" else "b")
     }
 }

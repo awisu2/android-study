@@ -49,5 +49,8 @@ class DataBindingWithViewModelLiveDataActivity : AppCompatActivity() {
         // lifecycleOwnerをセットすることで、双方向のバインディングになる
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        viewModel.changeText()
+
     }
-}
+}w
