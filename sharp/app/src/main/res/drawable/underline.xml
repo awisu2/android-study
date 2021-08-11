@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:top="@dimen/drawable_line_weight_erase"
+        android:left="@dimen/drawable_line_weight_erase"
+        android:right="@dimen/drawable_line_weight_erase"
+        >
+        <shape>
+            <stroke android:color="#33b5e5" android:width="@dimen/drawable_line_weight"/>
+        </shape>
+    </item>
+</layer-list>

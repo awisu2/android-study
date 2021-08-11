@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 下線幅
+    打ち消しサイズは基本同じでいいが、1dpの場合はなぜか半分残るので -2dpにする -->
+    <dimen name="drawable_line_weight">1dp</dimen>
+    <dimen name="drawable_line_weight_erase">-2dp</dimen>
+</resources>
